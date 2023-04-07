@@ -1,0 +1,130 @@
+.link-reaction {
+    & * {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    display: inline-block;
+    width: 100%;
+    min-height: 105px;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 15px;
+    background: #fff;
+    text-decoration: none;
+    color: #000;
+
+    .article-rection {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 90px 1fr 20px;
+        gap: 10px;
+
+        .img {
+            justify-self: center;
+
+            img {
+                width: 62px;
+                height: 60px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+        }
+
+        .nom,
+        .prix {
+            color: #212529;
+            font-weight: bold;
+            // font-size: 16px;
+        }
+
+        .nom {
+            font-size: 16px;
+        }
+
+        .prix {
+            font-size: 15px;
+            margin-bottom: 5px !important;
+        }
+
+        .notif {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .icone {
+            font-size: 8px;
+
+            a {
+                color: #212529;
+            }
+        }
+    }
+}
+
+.proposition {
+
+
+    background: #fff;
+    // background-color: royalblue;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    min-height: 100px;
+    // margin-bottom: 3px;
+    border-bottom: solid 1px #ddd;
+    padding: 8px 8px 16px 8px;
+    position: relative;
+
+    & * {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .img {
+        img {
+            width: 66%;
+            border-radius: 30px;
+        }
+    }
+
+    .nom {
+        color: #212529;
+        font-weight: bold;
+        // font-size: 16px;
+    }
+
+    button {
+        font-size: 13px;
+        padding: 6px 12px !important;
+
+        &.true {
+            background: orange;
+        }
+
+        &.false {
+            background: $main-color;
+        }
+
+        color: #fff;
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+    .btn-props {
+        justify-self: center;
+        align-self: center;
+    }
+
+    .prix,
+    .lieu-temp {
+        font-size: 13px;
+        color: #6c757d;
+
+        span {
+            color: orange;
+            font-weight: bold;
+        }
+    }
+}

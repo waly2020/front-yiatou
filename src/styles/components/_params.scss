@@ -1,0 +1,24 @@
+// reset
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+// end reset
+// variables
+$body-color : #ddd;
+$max-width : 1000px;
+$height-fixe : 60px;
+$max-screen : 700px;
+$main-color : #f12749;
+$m-a-c-2 : #8e3c4a;
+$main-color-alpha : #df4c651d;
+$main-color-alpha-page : #f26d8315;
+$seconde-color : royalblue;
+$height-carousel : 400px;
+$shadow-nav : 0 3px 5px rgba(185, 185, 185, 0.159);
+// end variables

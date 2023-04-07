@@ -1,0 +1,136 @@
+.en-tete {
+    width: 100%;
+    max-width: $max-width;
+    height: 61px;
+    background: #fff;
+    box-shadow: $shadow-nav;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    h1 {
+        padding: 0 !important;
+        margin: 0 !important;
+
+        &.main {
+            color: $main-color;
+        }
+
+        &.black {
+            color: #000;
+        }
+
+    }
+
+    .contente {
+        width: 100%;
+        max-width: $max-screen;
+        height: 100%;
+        margin: auto;
+        padding: 10px;
+        padding-right: 20px;
+
+        a {
+            color: #000;
+            transition: .5s;
+
+            svg {
+                width: 27px;
+            }
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+
+        &.addDemande,
+        &.business {
+            display: grid;
+            grid-template-columns: 20px 1fr 20px;
+            align-items: center;
+            gap: 10px;
+
+            h1 {
+
+                font: {
+                    weight: bold;
+                    size: 1.3em;
+                }
+
+                ;
+            }
+        }
+
+        &.notif {
+            display: grid;
+            grid-template-columns: 50px 1rf;
+            align-items: center;
+            justify-content: start;
+            gap: 5px;
+
+            h1 {
+                font-size: 1.4em;
+                font-weight: bold;
+                grid-column: 2/ span 3;
+            }
+
+            .icones {
+                justify-self: flex-end;
+            }
+        }
+
+        &.home,
+        &.boutique {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1 {
+                // color: $main-color;
+                font-size: 1.4em;
+                font-weight: bold;
+            }
+
+            .icones {
+                min-width: 66px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 10px;
+
+                .addCompte {
+                    position: relative;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                    &.user {
+                        &::after {
+                            content: "!";
+                            position: absolute;
+                            padding: 2px 8px;
+                            border-radius: 50%;
+                            transform: translate(50%, -10%);
+                            font-size: 10px;
+                            font-weight: bold;
+                            color: #fff;
+                            background-color: red;
+                            top: 0;
+                            right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

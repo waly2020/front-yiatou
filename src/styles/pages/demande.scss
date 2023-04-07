@@ -1,0 +1,138 @@
+@import '../components/params';
+
+.page.demande-page {
+    @import "../components/navigation.scss";
+    @import '../components/header.scss';
+    background: $main-color-alpha-page;
+    padding: 60px 10px 10px 10px;
+
+    .add-demande {
+        position: fixed;
+        right: 20px;
+        bottom: $height-fixe + 10px;
+        z-index: 7000;
+        opacity: .8;
+
+        .cercle-content {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background: $main-color;
+            border-radius: 50%;
+            box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.351);
+
+            .d {
+                position: absolute;
+                width: 30%;
+                height: 3px;
+                background: #fff;
+                left: 50%;
+                top: 50%;
+                border-radius: 4px;
+                transform: translate(-50%, -50%);
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 50%;
+                    top: 0;
+                    background: #fff;
+                    transform: translateX(-50%) rotate(90deg);
+                    border-radius: 4px;
+
+                }
+            }
+        }
+    }
+
+    .actuelle {
+        width: 100%;
+        min-height: 80vh;
+    }
+
+    .content-actuelle {
+        padding: 10px;
+        height: 122px;
+    }
+
+    .contener-confirmer {
+        height: 95px;
+        padding: 7px 12px;
+    }
+
+    .content-actuelle,
+    .contener-confirmer {
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.107);
+        border-radius: 10px;
+        margin: 10px 0;
+        display: flex;
+
+        .img-actuelle,
+        .img-confirmer {
+            width: 122px;
+            height: 100%;
+
+            &.c {
+                width: 66px;
+                height: 80px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 4px;
+                }
+            }
+
+            img {
+                width: 90px;
+                height: 90px;
+                border-radius: 10px;
+            }
+        }
+
+        .textes-actuelle,
+        .texte-confirmer {
+            &.c {
+                padding: 2px 15px;
+            }
+
+            .nom {
+                font-size: 12px;
+                font-weight: bold;
+
+                &.c {
+                    color: #333;
+                    font-weight: normal;
+                }
+            }
+
+            .reaction,
+            .prix {
+                font-size: 14px;
+                line-height: 8px;
+            }
+
+            .prix {
+                &.c {
+                    color: #333;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+
+            .reaction {
+                font-weight: bold;
+
+                a {
+                    text-decoration: none;
+                    color: #ff4746;
+                }
+
+            }
+        }
+    }
+
+}

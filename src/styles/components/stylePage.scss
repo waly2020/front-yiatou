@@ -1,0 +1,68 @@
+body {
+    min-height: 100vh;
+    // background: $body-color;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    max-width: $max-width;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: $height-fixe 0;
+    background: #f8f9fa;
+
+    // &.reaction {
+    //     padding: $height-fixe 0;
+    // }
+    &.textes-pages {
+        .body {
+            padding: 10px;
+        }
+    }
+
+    &.page-notif {
+        .body {
+            margin-top: 15px;
+        }
+    }
+
+    &.spashe {
+        background: $main-color-alpha;
+        height: calc(100vh - $height-fixe);
+
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // background: cadetblue;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        img {
+            width: 200px;
+        }
+    }
+
+    &.rose {
+        background: rgba(249, 160, 175, 0.218);
+    }
+
+    &.modif {
+        .body {
+            padding: 50px 35px;
+        }
+    }
+
+    &.create-shop {
+        padding: 0;
+    }
+
+    .body {
+        width: 100%;
+        max-width: $max-screen;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,136 @@
+@import '../components/params';
+
+.page.page-compte {
+    .user-contente {
+        width: 100%;
+        height: 330px;
+        background: rgba(238, 238, 238, 0.568);
+        padding: 20px 10px;
+
+        .fond-compte-user {
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            padding: 10px;
+
+            .cont-btn-compte {
+                // background: #000;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    font-size: 12px;
+
+                    &.link-cnt {
+                        color: #999;
+                    }
+                }
+
+                button {
+                    padding: 12px 20px;
+                    margin: 0 8px;
+                    width: 180px;
+                    border: none;
+                    outline: none;
+                    border-radius: 30px;
+                    background-color: #ff4746;
+                    color: #fff;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .user {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            // background: orange;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 53px;
+            // overflow: hidden;
+
+            &>img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 8px 8px 0 0;
+            }
+
+            .form-user {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%);
+                width: 80px;
+                height: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                overflow: hidden;
+                border: solid 2px #fff;
+
+                img {
+                    width: 90%;
+                    height: 90%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+
+        }
+
+        .data-user {
+            // margin-top: 10px;
+
+            p {
+                font-size: 14px;
+                text-align: center;
+                line-height: 10px;
+            }
+
+            a {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                font-size: 14px;
+                color: #ff4746;
+                font-weight: bold;
+            }
+
+            .nom {
+                font-size: 21px;
+                color: #212529;
+            }
+
+            .mail {
+                font-size: 16px;
+                color: #6c757d;
+                color: #555;
+                margin: 10px 0;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .links {
+        // padding: 10px;
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-bottom: solid 1px #aaa;
+        }
+    }
+}

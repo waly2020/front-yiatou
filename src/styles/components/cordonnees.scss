@@ -1,0 +1,60 @@
+.body.cord {
+    padding: 10px;
+
+    .cord-user {
+        background: #fff;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        border-radius: 15px 8px;
+        display: grid;
+
+        &.c-1 {
+            grid-template-rows: repeat(3, 81px);
+        }
+
+        &>* {
+            padding: 10px;
+            border-bottom: solid 1px rgb(223, 221, 221);
+
+            * {
+                line-height: 12px;
+            }
+
+            .tit {
+                font-size: 16px;
+                font-weight: bold;
+                color: #212529;
+            }
+
+            .cont {
+                color: #212529;
+                font-size: 15px;
+            }
+        }
+
+
+    }
+
+    button {
+        border: none;
+        outline: none;
+        background: #ff4746;
+        color: #fff;
+        font-size: 17px;
+        font-weight: bold;
+        padding: 10px 30px;
+        border-radius: 6px;
+        margin: 16px 0;
+    }
+
+    .link-modif {
+        border: none;
+
+        a {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff4746;
+            text-decoration: none;
+        }
+    }
+}
