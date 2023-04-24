@@ -3,17 +3,30 @@ import { ContentHeaderAddDemande, newGalerie } from '../components/Conposants';
 import Header from '../components/Header';
 
 const AddDemande = () => {
-    let imgs = [];
-    let [cpt, setCpt] = useState(0);
+    let imgs = ['ar2.jpeg'];
+    let [cpt, setCpt] = useState(1);
+    const [desc,setDesc] = useState("");
+    const [prix,setPrix] = useState();
 
+    const changement = event =>{
+        setDesc(event.target.value);
+    }
+
+    const changPrix = event =>{
+        setPrix(parseFloat(event.target.value));
+    }
     const incremente = () => {
         setCpt(cpt += 1);
     }
     const desIncremente = () => {
-        if (cpt > 0) {
+        console.log(`incre func`);
+        if (cpt >= 2) {
+            console.log("incre if");
             setCpt(cpt -= 1);
+            
         } else {
-            cpt = 0;
+            cpt = 1;
+            console.log("incre else");
         }
     }
     return (
@@ -27,7 +40,7 @@ const AddDemande = () => {
 
                         <div className="image">
                             <div className={"contener-images img-" + imgs.length}>
-                                {imgs.length === 0 ? <p>Ajouter jusqu'a 4 images</p> : newGalerie(imgs, "image")}
+                                {imgs.length === 0 ? <p>Ajouter jusqu'a 4 photos</p> : newGalerie(imgs, "image")}
                             </div>
                         </div>
 
@@ -54,18 +67,20 @@ const AddDemande = () => {
                             <p>Sélectionné un catégorie</p>
                             <select className="form-select" name='categories' aria-label="Default select example" defaultValue='One'>
                                 {/* <option selected>Open this select menu</option> */}
-                                <option defaultValue="1">One</option>
-                                <option defaultValue="2">Two</option>
-                                <option defaultValue="3">Three</option>
+                                <option defaultValue="1">Chaussures</option>
+                                <option defaultValue="2">Sacs Homme</option>
+                                <option defaultValue="3">Sacs Femme</option>
+                                <option defaultValue="3">Electromenager</option>
+                                <option defaultValue="3">Appareils Electroniques</option>
                             </select>
                         </div>
                         <div className="input">
                             <p>Prix de l'article</p>
-                            <input type="number" name="prix" id="prix" />
+                            <input type="number" value={prix} onChange={changPrix} name="prix" id="prix" />
                         </div>
                         <div className="input">
-                            <p>Description de l'article</p>
-                            <textarea name="description" id="description"></textarea>
+                            <p>Description de l'article {`(${desc.length}/160)`}</p>
+                            <textarea maxLength={160} name="description" id="description" onChange={changement}></textarea>
                         </div>
                     </div>
                     <div className="contener-submit">

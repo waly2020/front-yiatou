@@ -1,10 +1,21 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams} from 'react-router-dom';
 import { ContentHeaderAddBusiness, Descriptions, Galerie, linkImg } from '../components/Conposants';
 import Header from '../components/Header';
 
 const MiseRelation = () => {
-    let imgs = ["nike.jpg", "nike.jpg", "nike.jpg"];
+    const {back} = useParams();
+    let finalLink = () =>{
+        switch (back) {
+            case "details-article" :
+                return `/${back}/reaction`;
+            case "demande" :
+                return `/${back}/confirmer/conf`;
+            default :
+            return `/${back}`;
+        }
+    }
+    let imgs = ["ar2.jpeg", "ar1.jpeg", "ar3.jpeg"];
 
     const [activeToggle, activeGalerie] = useState(false);
     const addGalerie = () => {
@@ -13,7 +24,7 @@ const MiseRelation = () => {
     return (
         <div className='page'>
             <Header classPage="business">
-                <ContentHeaderAddBusiness texte="Mise en relation" link="/details-article" />
+                <ContentHeaderAddBusiness texte="Mise en relation" link={finalLink()} />
             </Header>
             <main className="body details-body">
                 <Galerie active={activeToggle} display={addGalerie} imgs={imgs} buttons={false} />
@@ -26,13 +37,13 @@ const MiseRelation = () => {
                 </div>
                 <div className="textes">
                     <p className='prix'>
-                        55 000 FCFA
+                        12 500 FCFA
                         <span>
                             <svg width="22" height="22" viewBox="0 0 16 16"><path fill="currentColor" d="M13.5 1a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3z" /></svg>
                         </span>
                     </p>
-                    <p className='nom'>(1) Nike tandance 2021</p>
-                    <Descriptions texte='Lire la description' />
+                    <p className='nom'>(1) Basket Adidas</p>
+                    <Descriptions description="Je la veux avec la pointure 43 et s'il n'y a pas la grise, je prendrais une blanche." texte='Lire la description' />
                 </div>
                 <div className="container pt-3 p mt-2 bg-white desc">
                     <h6 className="fw-bold text-secondary text-uppercase"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-exclamation-triangle-fill text-danger" viewBox="0 0 16 16">
@@ -41,7 +52,7 @@ const MiseRelation = () => {
 
                     <div className="row">
                         <div className="col">
-                            <p className="text-sign mt-2">Vous pouvez avoir une totale confiance en Cheick, car nous l'avons choisi avec précaution. Une fois en contact avec lui, prenez rendez-vous le plus vite dans sa boutique, afin d'acheter votre article. Vous pouvez aussi lui demander de vous livrer à domicile s'il fait des livraison. N'envoyez pas d'argent en ligne et optez toujours pour du paiement en cash.</p>
+                            <p className="text-sign mt-2">Vous pouvez avoir une totale confiance en Henry pierre, car nous l'avons choisi avec précaution. Une fois en contact avec lui, prenez rendez-vous le plus vite dans sa boutique, afin d'acheter votre article. Vous pouvez aussi lui demander de vous livrer à domicile s'il fait des livraison. N'envoyez pas d'argent en ligne et optez toujours pour du paiement en cash.</p>
                         </div>
                     </div>
                 </div>

@@ -4,11 +4,11 @@ import { ConfirmeArticle } from './Conposants';
 // import img from '../image/nike.jpg';
 // img = "nike.jpg", nom = "Jordan", prix = 55000,
 const article = [
-    // {
-    //     img: "nike.jpg",
-    //     nom: "jordan",
-    //     prix: 12700
-    // },
+    {
+        img: "ar1.jpeg",
+        nom: "Basket adidas",
+        prix: 12500
+    },
     // {
     //     img: "nike.jpg",
     //     nom: "jordan",

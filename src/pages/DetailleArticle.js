@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { ContentHeaderAddBusiness, Galerie, ItemPrposition, linkImg } from '../components/Conposants';
 import Header from '../components/Header';
+import { useParams } from 'react-router-dom';
+
 
 const DetailleArticle = () => {
-    let imgs = ["nike.jpg", "nike.jpg", "nike.jpg"];
+    let imgs = ["ar2.jpeg","ar1.jpeg","ar3.jpeg"];
+    const {back} = useParams();
 
     const [activeToggle, activeGalerie] = useState(false);
     const addGalerie = () => {
@@ -12,7 +15,7 @@ const DetailleArticle = () => {
     return (
         <div className='page details-article rose'>
             <Header classPage="business">
-                <ContentHeaderAddBusiness texte="Details de l'aricle" link="/reaction" />
+                <ContentHeaderAddBusiness texte="Details de l'aricle" link={`/${back}`} />
             </Header>
             <main className="body details-body">
                 <Galerie active={activeToggle} display={addGalerie} imgs={imgs} buttons={false} />
@@ -25,12 +28,12 @@ const DetailleArticle = () => {
                 </div>
                 <div className="textes">
                     <p className='prix'>
-                        55 000 FCFA
+                        12 500 FCFA
                         <span>
                             <svg width="22" height="22" viewBox="0 0 16 16"><path fill="currentColor" d="M13.5 1a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3z" /></svg>
                         </span>
                     </p>
-                    <p className='nom'>(1) Nike tandance 2021</p>
+                    <p className='nom'>(1) Basket Adidas</p>
                     <p className='date'>Demande a 11h06.</p>
                     <p className="texte">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas modi alias vero
@@ -42,7 +45,7 @@ const DetailleArticle = () => {
                 </div>
 
             </main>
-            <ItemPrposition propose={false} />
+            <ItemPrposition nom='Henry pierre' lieu='Pk18 bikele' propose={false} backLink='details-article' />
         </div>
     );
 };

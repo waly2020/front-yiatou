@@ -1,10 +1,12 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Header from '../components/Header';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet,useParams } from 'react-router-dom';
 import { ContentHeaderNotif, NavigationDemandeur } from '../components/Conposants';
 
 const Demande = () => {
+    let {active} = useParams();
+    console.log(active);
     return (
         <div className='page demande-page'>
 
@@ -13,9 +15,9 @@ const Demande = () => {
                     <ContentHeaderNotif texte="Demandes" link="#" color='black' />
                 </Header>
                 <nav className="onglet">
-                    <Link to="/demande"><span>Actuelles</span></Link>
-                    <Link to="/demande/confirmer"><span>Confirmees</span></Link>
-                    <Link to="/demande/historique"><span>Historique</span></Link>
+                    <Link className={active === "dem" ? "active" : ""} to="/demande/dem"><span>Actuelles</span></Link>
+                    <Link className={active === "conf" ? "active" : ""} to="/demande/confirmer/conf"><span>Confirmées</span></Link>
+                    <Link className={active === "his" ? "active" : ""} to="/demande/historique/his"><span>Historique</span></Link>
                 </nav>
                 <div className="fond-blanc">
                     <Outlet />
@@ -26,7 +28,7 @@ const Demande = () => {
                     </div>
                 </Link>
                 <Navigation menu="home">
-                    <NavigationDemandeur active="demande" />
+                    <NavigationDemandeur notif={2} active="demande" />
                 </Navigation>
             </main>
         </div>

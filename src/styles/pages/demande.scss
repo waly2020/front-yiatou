@@ -1,5 +1,8 @@
 @import '../components/params';
-
+.link-item{
+    text-decoration: none;
+    color: inherit;
+}
 .page.demande-page {
     @import "../components/navigation.scss";
     @import '../components/header.scss';
@@ -125,11 +128,7 @@
 
             .reaction {
                 font-weight: bold;
-
-                a {
-                    text-decoration: none;
-                    color: #ff4746;
-                }
+                color: #ff4746;
 
             }
         }

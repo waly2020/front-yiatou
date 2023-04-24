@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 // import { Slide } from 'react-slideshow-image';
-let linkImg = "http://localhost:3000/";
+// let linkImg = "http://localhost:3000/";
+let linkImg = "https://preeminent-pastelito-85d92a.netlify.app/";
 
 const ContentHeaderNotif = ({ texte, notif = false, back = false, color = "main", backPage = "/" }) => {
     return (
@@ -29,13 +30,6 @@ const ContentHeaderAddDemande = ({ color = "main" }) => {
                 <svg width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m10.875 19.3l-6.6-6.6q-.15-.15-.213-.325Q4 12.2 4 12t.062-.375q.063-.175.213-.325l6.6-6.6q.275-.275.687-.288q.413-.012.713.288q.3.275.313.687q.012.413-.288.713L7.4 11h11.175q.425 0 .713.287q.287.288.287.713t-.287.712Q19 13 18.575 13H7.4l4.9 4.9q.275.275.288.7q.012.425-.288.7q-.275.3-.7.3q-.425 0-.725-.3Z" /></svg>
             </Link>
             <h1 className={"titre " + color}>Nouvelle Demande</h1>
-            <div className="icones">
-                <Link to="/notifications">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="35" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"></path>
-                    </svg>
-                </Link>
-            </div>
         </>
     );
 };
@@ -140,14 +134,13 @@ const ContentHeaderHome = ({ color = "main", icnNotif = false, icnBoutique = fal
                 {icnBoutique ? <Link to={link}>
                     <svg width="50" height="50" viewBox="0 0 16 16"><path stroke="none" fill='currentColor' d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8A2.37 2.37 0 0 1 8 7.083A2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0a.5.5 0 0 1 1 0a1.375 1.375 0 0 0 2.75 0a.5.5 0 0 1 1 0a1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0a.5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" /></svg>
                 </Link> : ""}
-
-                {icnCompte ? <div className={`addCompte ${user ? "" : "user"}`}>
-                    {user ? user.sexe.toLowerCase() === "m" ? <img src={`${linkImg}assets/image/icones/men-user.png`} alt="Utilisateur Homme" /> : <img src={`${linkImg}assets/image/icones/wom-user.png`} alt="Utilisateur Femme" /> : <Link to="/compte/demandeur">
+                {icnCompte ? <Link to="/compte/demandeur"> <div className={`addCompte ${user ? "" : "user"}`}>
+                    {user ? user.sexe.toLowerCase() === "m" ? <img src={`${linkImg}assets/image/icones/men-user.png`} alt="Utilisateur Homme" /> : <img src={`${linkImg}assets/image/icones/wom-user.png`} alt="Utilisateur Femme" /> :
                         <svg xmlns="http://www.w3.org/2000/svg" width="34" height="42" fill="#000" className="bi bi-person text-dark" viewBox="0 0 16 16">
                             <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
                         </svg>
-                    </Link>}
-                </div> : ""}
+                    }
+                </div> </Link>: ""}
                 {icnNotif ? <Link to="/notifications">
                     <svg xmlns="http://www.w3.org/2000/svg" width="27" height="35" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"></path>
@@ -156,7 +149,7 @@ const ContentHeaderHome = ({ color = "main", icnNotif = false, icnBoutique = fal
             </div>
         </>
     );
-};
+}; 
 const NavigationDemandeur = ({ active, notif = 100 }) => {
     return (
         <>
@@ -166,13 +159,13 @@ const NavigationDemandeur = ({ active, notif = 100 }) => {
                 </svg>
                 <p>Accueil</p>
             </Link>
-            <Link to="/demande" className={active === "demande" ? "active" : ""}>
+            <Link to="/demande/dem" className={active === "demande" ? "active" : ""}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="42" fill="currentColor" className="bi bi-images text-dark" viewBox="0 0 16 16">
                     <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
                     <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"></path>
                 </svg>
                 {notif > 0 ? <p className='notif-dmd'>{notif >= 10 ? "+9" : notif}</p> : ""}
-                <p>Demande</p>
+                <p>Demandes</p>
             </Link>
             <Link to="/compte/demandeur" className={active === "compte" ? "active" : ""}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="42" fill="currentColor" className="bi bi-person text-dark" viewBox="0 0 16 16">
@@ -190,10 +183,10 @@ const NavigationVendeur = ({ active }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="35" fill="currentColor" className="bi bi-people" viewBox="0 0 16 16">
                     <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
                 </svg>
-                <p>Demande</p>
+                <p>Demandes</p>
             </Link>
 
-            <Link to="/activites" className={active === "activite" ? "active" : ""}>
+            <Link to="/activites/act" className={active === "activite" ? "active" : ""}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="35" fill="currentColor" className="bi bi-card-checklist" viewBox="0 0 16 16">
                     <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"></path>
                     <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"></path>
@@ -241,7 +234,7 @@ const Descriptions = ({ description = "Aucune description", texte = "Description
 };
 // les articles
 // http://localhost:3000/demande/historique
-const Article = ({ attent = false, date = false, actuelleArticle = [] }) => {
+const Article = ({ actuelleArticle = [] }) => {
 
     return (
         <>
@@ -258,8 +251,8 @@ const Article = ({ attent = false, date = false, actuelleArticle = [] }) => {
                         </div>
                     </div>
                     <Descriptions description={article.description} />
-                    {attent ? <p className='date a'>${article.status}</p> : ""}
-                    {date ? <p className='date'>{article.date}</p> : ""}
+                    {article.attent ? <p className='date a'>{article.status}</p> : ""}
+                    {article.date ? <p className='date'>{article.date}</p> : ""}
                 </div>
             ))}
             {/* --------- */}
@@ -278,7 +271,7 @@ const PopPropose = ({ toggle, active, prix = 10000, date = "12h45" }) => {
                     </div>
                 </p>
                 <div className="input">
-                    <input type="text" name="nouveau" placeholder='Proposer un nouveau prix' />
+                    <input type="number" name="nouveau" placeholder='Proposer un nouveau prix' />
                 </div>
                 <p className='plus-faible'>Proposition la plus<br />faible</p>
                 <div className="somme">
@@ -390,6 +383,7 @@ const ComponentVide = ({ nameImg, texte }) => {
 const ActueleArticle = ({ actuelleArticle = [] }) => {
     return (
         <>
+        <Link className='link-item' to="/reaction">
             {actuelleArticle.length === 0 ? <ComponentVide nameImg="demande-vide.png" texte="Aucune demande" /> : actuelleArticle.map((article, i, array) => (
                 <div key={i} className="content-actuelle">
                     <div className="img-actuelle">
@@ -398,10 +392,11 @@ const ActueleArticle = ({ actuelleArticle = [] }) => {
                     <div className="textes-actuelle">
                         <p className='nom'>{article.titre}</p>
                         <p className='prix'>{article.prix.toLocaleString()} FCFA</p>
-                        {article.reaction ? <p className='reaction'><Link to="/reaction">{article.reaction} reactions</Link></p> : ""}
+                        {article.reaction ? <p className='reaction'>{article.reaction} reactions</p> : ""}
                     </div>
                 </div>
             ))}
+        </Link>
         </>
     );
 };
@@ -410,12 +405,12 @@ const ConfirmeArticle = ({ actuelleArticle = [] }) => {
     return (
         <>
             {/*  */}
+            <Link className='link-item' to="/mise-en-relation/demande">
             {actuelleArticle.length === 0 ? <ComponentVide nameImg="vide-homme.png" texte="Aucune demande" /> : actuelleArticle.map((article, i, array) => (
                 <div key={i} className="contener-confirmer">
                     <div className="img-confirmer c">
-                        <Link to="/mise-en-relation">
+                        
                             <img src={`${linkImg}assets/image/${article.img}`} alt="chessure" />
-                        </Link>
                     </div>
                     <div className="texte-confirmer c">
                         <p className="prix c">{article.prix.toLocaleString()} FCFA</p>
@@ -423,7 +418,9 @@ const ConfirmeArticle = ({ actuelleArticle = [] }) => {
 
                     </div>
                 </div>
+                
             ))}
+            </Link>
             {/*  */}
         </>
     );
@@ -447,7 +444,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="button-submit">
-                    <button type="submit" className='checked'>Connexion</button>
+                    <button type="submit" className='checked'>Je me connecte</button>
                 </div>
             </form>
 
@@ -467,8 +464,8 @@ const Create = () => {
                 <div className="input">
                     <p className="input-desc">Civilité</p>
                     <select name="civiliter" id="civiliter" required={true}>
-                        <option value="homme">Homme</option>
-                        <option value="femme">Femme</option>
+                        <option value="homme">Monsieur</option>
+                        <option value="femme">Madame</option>
                     </select>
                 </div>
                 <div className="input">
@@ -490,7 +487,7 @@ const Create = () => {
                 </div>
             </div>
             <div className="button-submit">
-                <button type={check ? "submit" : "button"} className={check ? "checked" : ""}>Cree mon compte</button>
+                <button type={check ? "submit" : "button"} className={check ? "checked" : ""}>Je cree mon compte</button>
             </div>
             <p className='link'>Vous avez deja un compte ? <Link to="/log/login">connectez-vous !</Link></p>
         </form>
@@ -500,12 +497,13 @@ const Create = () => {
 
 const ArticleReaction = ({ nom = "Nike tendance 2021", img = "nike.jpg", prix = 55000, heur = "11h30" }) => {
     return (
+        <Link to="/details-article/reaction">
         <div className='link-reaction'>
             <div className='article-rection'>
                 <div className="img">
-                    <Link to="/details-article">
+                    
                         <img src={linkImg + "assets/image/" + img} alt='img' className="img-img" />
-                    </Link>
+                    
                 </div>
                 <div className="texte-reaction">
                     <p className='nom'>(1) {nom}</p>
@@ -519,10 +517,11 @@ const ArticleReaction = ({ nom = "Nike tendance 2021", img = "nike.jpg", prix = 
                 </span>
             </div>
         </div>
+       </Link>
     );
 };
 
-const ItemPrposition = ({ nom = "About", prix = 550000, temp = 79, img = "store-icon.jpg", propose = true }) => {
+const ItemPrposition = ({ nom = "About", prix = 550000, temp = 79, img = "store-icon.jpg", propose = true,backLink = "reaction", lieu = "Petit paris"}) => {
 
     const [toggle, settoggle] = useState(false);
     const active = () => {
@@ -541,12 +540,12 @@ const ItemPrposition = ({ nom = "About", prix = 550000, temp = 79, img = "store-
                 {propose ? <p className="prix">Prends a <span className='num' onClick={active}>{prix.toLocaleString()} FCFA</span></p> : ""}
 
                 <p className="lieu-temp">
-                    Petit paris, il y'a {temp < 60 ? temp + " min" : Math.floor(temp / 60) + " h"}.
+                    {lieu}<br/>il y'a {temp < 60 ? temp + " min" : Math.floor(temp / 60) + " h"}.
                 </p>
 
             </div>
             <div className="btn-props">
-                <Link to="/mise-en-relation">
+                <Link to={`/mise-en-relation/${backLink}`}>
                     <button className={`${propose}`}>Choisir</button>
                 </Link>
             </div>

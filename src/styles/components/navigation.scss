@@ -22,6 +22,21 @@
 
         &.boutique {
             grid-template-columns: repeat(4, 1fr);
+            
+            a.active{
+                svg{
+                    fill: royalblue;
+                }
+                p{color: royalblue;}
+            }
+            a:hover {
+                color: royalblue;
+
+                svg {
+                    fill: royalblue;
+                }
+            }
+            
         }
 
         height: 100%;
@@ -31,7 +46,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             color: #555;
             text-decoration: none;
@@ -43,7 +58,7 @@
                 position: absolute;
                 left: 55%;
                 top: 0;
-                transform: translateY(-50%);
+                transform: translateY(-30%);
                 padding: 8px;
                 color: #fff;
                 background: $main-color;
@@ -53,7 +68,8 @@
             }
 
             svg {
-                margin-bottom: 4px;
+                // margin-bottom: 4px;
+                width: 23px;
             }
 
             &.active {

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Compte = () => {
     // const { compte } = useParams();
-    let haveCount = false;
+    let haveCount = true;
     return (
         <div className='page page-compte'>
             <Header classPage="notif">
@@ -16,9 +16,9 @@ const Compte = () => {
                 <div className="user-contente">
                     <div className="fond-compte-user">
                         {haveCount ? <><div className="user">
-                            <img src={linkImg + "assets/image/f-compte.jpg"} alt="fond compte" />
+                            <img src={linkImg + "assets/image/icones/formes.jpg"} alt="fond compte" />
                             <div className="form-user">
-                                <img src={linkImg + "assets/image/dave.jpg"} alt="user" />
+                                <img src={linkImg + "assets/image/icones/men-user.png"} alt="user" />
                             </div>
                         </div>
                             <div className="data-user">
@@ -55,7 +55,7 @@ const Compte = () => {
                 </div>
             </main>
             <Navigation menu="home">
-                <NavigationDemandeur active="compte" />
+                <NavigationDemandeur notif={2} active="compte" />
             </Navigation>
         </div>
 

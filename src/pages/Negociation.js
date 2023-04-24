@@ -10,12 +10,12 @@ const Negociation = () => {
                 <ContentHeaderNotif texte="Mes négociations" link="#" color='black' />
             </Header>
             <main className="body">
-                <Carte />
-                <Carte />
-                <Carte />
-                <Carte />
-                <Carte />
-                <Carte />
+                <Carte imgs={['ar3.jpeg','ar1.jpeg','ar2.jpeg']} prix={12500} nom='Basket Adidas' vues={32} reaction={2}/>
+                {/* <Carte /> */}
+                {/* <Carte /> */}
+                {/* <Carte /> */}
+                {/* <Carte /> */}
+                {/* <Carte /> */}
             </main>
             <Navigation menu="boutique">
                 <NavigationVendeur active="negociation" />

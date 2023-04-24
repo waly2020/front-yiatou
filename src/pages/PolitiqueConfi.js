@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 const PolitiqueConfi = () => {
     return (
-        <div className='page textes-pages'>
+        <div id='scroll' className='page textes-pages'>
             <Header classPage="notif">
                 <ContentHeaderNotif texte="Confidentialité" back={true} color="black" backPage={useParams().back === 'compte' ? '/compte/demandeur' : '/compte/business'}></ContentHeaderNotif>
             </Header>

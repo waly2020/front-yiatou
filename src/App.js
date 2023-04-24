@@ -41,6 +41,7 @@ import ConditionUtilisation from './pages/ConditionUtilisation';
 import PolitiqueVente from './pages/PolitiqueVente';
 import PolitiqueConfi from './pages/PolitiqueConfi';
 import Aide from './pages/Aide';
+import HistoriqueBusiness from './components/HistoriqueBusiness';
 // /negociation
 const App = () => {
   return (
@@ -64,22 +65,22 @@ const App = () => {
         <Route path='/spashe' element={<Spashe />} />
         <Route path='/reaction' element={<Reaction />} />
         <Route path='/user/:content' element={<Cordonnee />} />
-        <Route path='/details-article' element={<DetailleArticle />} />
-        <Route path='/mise-en-relation' element={<MiseRelation />} />
+        <Route path='/details-article/:back' element={<DetailleArticle />} />
+        <Route path='/mise-en-relation/:back' element={<MiseRelation />} />
         <Route path='/log/:form' element={<Log />} />
         <Route path='/create-shop' element={<CreateShop />} />
         <Route path='/notifications' element={<Notifications />} />
 
         <Route path='/activites' element={<Activiter />}>
-          <Route path='/activites' element={<Atentes />} />
-          <Route path='/activites/valide' element={<Valides />} />
-          <Route path='/activites/historique' element={<Historique />} />
+          <Route path='/activites/:active' element={<Atentes />} />
+          <Route path='/activites/valide/:active' element={<Valides />} />
+          <Route path='/activites/historique/:active' element={<HistoriqueBusiness />} />
         </Route>
 
         <Route path='/demande' element={<Demande />}>
-          <Route path='/demande' element={<Actuelle />} />
-          <Route path='/demande/confirmer' element={<Confirmer />} />
-          <Route path='/demande/historique' element={<Historique />} />
+          <Route path='/demande/:active' element={<Actuelle />} />
+          <Route path='/demande/confirmer/:active' element={<Confirmer />} />
+          <Route path='/demande/historique/:active' element={<Historique />} />
         </Route>
 
       </Routes>

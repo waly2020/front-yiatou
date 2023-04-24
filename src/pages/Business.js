@@ -7,7 +7,7 @@ const Business = () => {
     return (
         <div className='page page-business'>
             <Header classPage="business">
-                <ContentHeaderAddBusiness bool={false} texte="Business" link="/compte/demandeur" />
+                <ContentHeaderAddBusiness bool={false} texte="Espace Business" link="/compte/demandeur" />
             </Header>
 
             <main className="body">

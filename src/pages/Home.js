@@ -14,7 +14,7 @@ donnee acepter pour le carrousel.
  */
 // exemple
 // const users = {
-//     sexe: "M",
+//     sexe: "m",
 // }
 const slides = [{
     image: "nike.jpg",
@@ -35,7 +35,7 @@ const Home = () => {
         <>
             <div className="page home-page">
                 <Header classPage="home">
-                    <ContentHeaderHome icnBoutique={true} icnNotif={false} icnCompte={true} />
+                    <ContentHeaderHome icnBoutique={true} icnNotif={true} icnCompte={false} />
                 </Header>
                 <main className="body">
                     <div className="add-image">
@@ -83,7 +83,7 @@ const Home = () => {
                     </div>
                 </main>
                 <Navigation menu="home">
-                    <NavigationDemandeur active="home" />
+                    <NavigationDemandeur notif={2} active="home" />
                 </Navigation>
             </div>
         </>

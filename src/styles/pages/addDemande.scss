@@ -25,7 +25,7 @@ $height-button : 60px;
                 display: grid;
                 grid-template-columns: 100px 1fr;
                 box-shadow: 0 -1px 2px rgb(205, 204, 204);
-                gap: 4px;
+                gap: 10px;
                 padding: 8px 15px;
                 background: #fff;
 
@@ -40,6 +40,7 @@ $height-button : 60px;
                     color: #888;
                     background: #f2f2f2;
                     cursor: pointer;
+                    height: 30px;
                 }
 
                 .send {
@@ -51,8 +52,7 @@ $height-button : 60px;
 
                 .quantiter {
                     display: grid;
-                    grid-template-columns: repeat(3, 30px);
-                    gap: 5px;
+                    grid-template-columns: 37px 26px 37px;
                     align-content: center;
 
                     input {
