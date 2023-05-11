@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+// import Cookies from 'universal-cookie';
 // import { Slide } from 'react-slideshow-image';
-// let linkImg = "http://localhost:3000/";
-let linkImg = "https://preeminent-pastelito-85d92a.netlify.app/";
+import Cookie from 'js-cookie';
+let linkImg = "http://localhost:3000/";
+// let linkImg = "https://preeminent-pastelito-85d92a.netlify.app/";
 
 const ContentHeaderNotif = ({ texte, notif = false, back = false, color = "main", backPage = "/" }) => {
     return (
@@ -453,28 +455,101 @@ const Login = () => {
     );
 };
 const Create = () => {
+    // Initialisation des états d'erreur et de chargement de la page
+    const [erreur, SetErreur] = useState(false);
+    const [top, SetTop] = useState(false);
+
     const [check, setCheck] = useState(false);
+    const userName = useRef("");
+    const lastName = useRef("");
+    console.log(lastName.current.value);
+    const password = useRef("");
+    const genre = useRef("");
+    const numero = useRef("");
+
+    const handleForm = async (e) => { // déclare une fonction asynchrone qui sera exécutée lors de la soumission du formulaire
+
+        e.preventDefault(); // empêche la soumission du formulaire de se produire par défaut
+
+        const data = {
+            username : userName.current.value,
+
+            password : password.current.value,
+            condition : `${check}`,
+            email : `${userName.current.value}${Math.floor(Math.random() * 100)}@gmail.com`,
+        }
+        SetTop(true); // met à jour l'état de la variable "Top" à true
+
+        fetch( // envoie une requête POST à l'endpoint de création de compte utilisateur de l'API
+        "https://yiatoutest.pythonanywhere.com/creation-2f416677-858f-796a-a221-690e5e4ae75a2f416677-858f-796a-a221-690e5e4ae75a",
+        {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers : {'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+            },
+        }
+        ).then(response => {
+            
+            if (response.ok) { // si la réponse est valide (statut 200-299)
+                console.log('data :\n',data);
+                console.log("utilisateur cree");
+
+                response.json().then(dataUser => {
+                    console.log(dataUser);
+                    console.log('access \n',dataUser.access);
+
+                    Cookie.set( // stocke le jeton d'accès dans un cookie nommé "2f416677-858f-796a-a221-690e5e4ae75a-token"
+                    "yiatou-token-access",
+                    dataUser.access,
+                    { expires: 7, path: "/" }
+                    );
+
+                    Cookie.set( // stocke le nom d'utilisateur dans un cookie nommé "2f416677-858f-796a-a221-690e5e4ae75a-Cooktoken"
+                    "yiatou-token-user",
+                    JSON.stringify({id : 10, username : data.username,email : data.email}),
+                    { expires: 7, path: "/" }
+                    );
+                    window.location.href = "/";
+                }) // récupère les données de réponse sous forme d'objet JSON
+       
+        console.log(response);
+        // window.location.reload(); // recharge la page après avoir stocké les cookies
+        }
+        }).catch(err =>{
+          
+            // SetErreur(dataUser); // met à jour l'état de la variable "Erreur" avec les données de réponse de l'API
+            SetTop(false); // met à jour l'état de la variable "Top" à false
+            SetErreur(err);
+            console.log("erreur");
+            console.log(err);
+        })
+
+        
+    };
+    
+
     return (
-        <form action="#" method="post" className='form create'>
+        <form onSubmit={handleForm} className='form create'>
             <div className="inputs">
-                <div className="input">
-                    <p className="input-desc">Prenom</p>
-                    <input type="text" name="prenom" id='prenom' placeholder='Doe' required={true} />
+            <div className="input">
+                    <p className="input-desc">Nom</p>
+                    <input ref={userName} onChange={txt => {console.log(userName.current.value);}} type="text" name="prenom" id='prenom' placeholder='Doe' required={true} />
                 </div>
                 <div className="input">
                     <p className="input-desc">Civilité</p>
-                    <select name="civiliter" id="civiliter" required={true}>
+                    <select ref={genre} name="civiliter" id="civiliter" required={true}>
                         <option value="homme">Monsieur</option>
                         <option value="femme">Madame</option>
                     </select>
                 </div>
                 <div className="input">
                     <p className="input-desc">Numero de telephone</p>
-                    <input type="tel" name="numero" id="numero" placeholder='074000000' required={true} />
+                    <input ref={numero} type="tel" name="numero" id="numero" placeholder='074000000' required={true} />
                 </div>
                 <div className="input">
                     <p className="input-desc">Mot de passe</p>
-                    <input type="password" name="password" id="password" required={true} />
+                    <input ref={password} type="password" name="password" id="password" required={true} />
                 </div>
                 <p className='link-conditions'>
                     <Link to="/condition-utilisation/log/create">Lire les conditions d'utilisations</Link>

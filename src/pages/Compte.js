@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Compte = () => {
     // const { compte } = useParams();
-    let haveCount = true;
+    let haveCount = false;
     return (
         <div className='page page-compte'>
             <Header classPage="notif">
