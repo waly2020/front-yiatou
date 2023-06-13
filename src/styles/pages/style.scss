@@ -6,7 +6,9 @@
 @import '../components/cordonnees.scss';
 @import '../components/textePage.scss';
 @import '../components/caroussel.scss';
-
+body{
+    background: #fff;
+}
 $bg-garlerie : rgb(255, 255, 255);
 $c-btn-galerie : 70px;
 

@@ -42,6 +42,8 @@ import PolitiqueVente from './pages/PolitiqueVente';
 import PolitiqueConfi from './pages/PolitiqueConfi';
 import Aide from './pages/Aide';
 import HistoriqueBusiness from './components/HistoriqueBusiness';
+// Default theme
+import '@splidejs/react-splide/css/sea-green';
 // /negociation
 const App = () => {
   return (
