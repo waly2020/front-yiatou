@@ -3,8 +3,112 @@
 $height-button : 60px;
 
 .page.page-addDemande {
+    position: relative;
     padding-bottom: 75px;
-
+    .send {
+        background: $main-color;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .modale{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.659);
+        z-index: -10000;
+        opacity: 0;
+        transition: 0.8s;
+        &.active{
+            opacity: 1;
+            z-index: 10000;
+        }
+        .closeModal{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            font-size: 1.4em;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.313);
+        }
+        .contentModale{
+            width: 90%;
+            min-height: 200px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px 10px;
+            h2{
+                color: $main-color;
+                margin-bottom: 30px;
+                font-weight: bold;
+                font-size: 2em;
+            }
+            p{
+                display: flex;
+                justify-content: space-between;
+                color: #777;
+                margin-bottom: 10px;
+                .titre-list{
+                    color: #888;
+                    font-weight: bold;
+                }
+            }
+            .send{
+                margin: auto;
+                display: block;
+                width: 100%;
+                max-width: 400px;
+                padding: 14px;
+                margin-top: 40px;
+            }
+            .content-img-resume{
+                display: flex;
+                flex-flow: row wrap;
+                gap: 10px;
+                margin-top: 30px;
+                .img-gl{
+                    width: 80px;
+                    height: 70px;
+                    background-color: rgba(211, 209, 209, 0.212);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 8px;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .btn-desc{
+            color: #888;
+            font-size: 16px;
+            text-align: left;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            &.true{
+                margin: 0;
+                font-size: 16px;
+            }
+        }
+    }
     .body {
         .true {
             margin: 20px 10px;
@@ -28,26 +132,17 @@ $height-button : 60px;
                 gap: 10px;
                 padding: 8px 15px;
                 background: #fff;
-
                 button {
                     border: none;
                     outline: none;
                     border-radius: 4px;
                     cursor: pointer;
                 }
-
                 .set {
                     color: #888;
                     background: #f2f2f2;
                     cursor: pointer;
                     height: 30px;
-                }
-
-                .send {
-                    background: $main-color;
-                    color: #fff;
-                    text-transform: uppercase;
-                    font-weight: bold;
                 }
 
                 .quantiter {
@@ -70,7 +165,7 @@ $height-button : 60px;
                 display: grid;
                 grid-template-rows: repeat(3, 80px) 150px;
                 gap: 10px;
-
+                
                 input,
                 textarea {
                     border: none;
@@ -114,7 +209,7 @@ $height-button : 60px;
                 .image {
                     border: dashed 3px $main-color-alpha;
                     padding: 10px;
-                    min-height: 250px;
+                    height: 250px;
 
                     .contener-images {
                         width: 100%;
@@ -173,7 +268,7 @@ $height-button : 60px;
                     padding: 15px;
                     background: #fff;
                     border: dashed 3px $main-color-alpha;
-
+                    
                     .button {
                         position: relative;
                         width: 100%;

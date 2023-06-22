@@ -4,8 +4,8 @@ import jwtDecode from 'jwt-decode';
 import Cookie from 'js-cookie';
 import {Splide,SplideSlide} from '@splidejs/react-splide';
 
-// let linkImg = "http://localhost:3000/";
-let linkImg = "https://yiatouweb.netlify.app/";
+let linkImg = "http://localhost:3000/";
+// let linkImg = "https://yiatouweb.netlify.app/";
 
 const ContentHeaderNotif = ({ texte, notif = false, back = false, color = "main", backPage = "/" }) => {
     return (
@@ -38,7 +38,7 @@ const ContentHeaderCompte = ({texte = "Mon compte",color = "#444",linkImgUser,li
         <>
         <h1 className='titre' style={{color : color}}>{texte}</h1>
         {userConnected ? <div className='option-user'>
-            <img src={linkImgUser} onClick={() => {setDisplay(!display)}}/>
+            <img src={linkImgUser} onClick={() => {setDisplay(!display)}} alt='utilisateur non connecter'/>
 
             <ul className={`link-option-user ${display ? "active" : ""}`}>
               <li><Link to={linkData}><i className="bi bi-person-bounding-box"></i> Mes cordonnees</Link></li>
@@ -540,7 +540,7 @@ const Login = () => {
             password : password.current.value
         }
         console.log(data);
-        SetTop(true); // Affichage du spinner de chargement
+        SetTop(!top); // Affichage du spinner de chargement
 
         // Envoi de la requête de connexion au serveur avec les données du formulaire
         fetch("https://yiatoutest.pythonanywhere.com/api/token", {
@@ -575,7 +575,7 @@ const Login = () => {
         }
         }).catch(err =>{
             console.log(err);
-            SetErreur(true); // Affichage de l'erreur
+            SetErreur(!erreur); // Affichage de l'erreur
             SetTop(false); // Masquage du spinner de chargement
         })
 
@@ -611,7 +611,7 @@ const Create = () => {
     const [check, setCheck] = useState(false);
     const userName = useRef("");
     const lastName = useRef("");
-    const email = useRef("");
+    // const email = useRef("");
     console.log(lastName.current.value);
     const password = useRef("");
     const genre = useRef("");
@@ -631,7 +631,7 @@ const Create = () => {
         SetTop(true); // met à jour l'état de la variable "Top" à true
 
         fetch( // envoie une requête POST à l'endpoint de création de compte utilisateur de l'API
-        "https://yiatoutest.pythonanywhere.com/creation-2f416677-858f-796a-a221-690e5e4ae75a2f416677-858f-796a-a221-690e5e4ae75a",
+        "https://yatouback.pythonanywhere.com/creation-2f416677-858f-796a-a221-690e5e4ae75a2f416677-858f-796a-a221-690e5e4ae75a",
         {
             method: "POST",
             body: JSON.stringify(data),

@@ -22,3 +22,8 @@ $seconde-color : royalblue;
 $height-carousel : 400px;
 $shadow-nav : 0 3px 5px rgba(185, 185, 185, 0.159);
 // end variables
+@for $i from 0 through 20 {
+    .mt-#{$i} {
+        margin-top: #{$i}px;
+    }
+}
