@@ -16,9 +16,14 @@ $height-fixe : 60px;
 $max-screen : 700px;
 $main-color : #f12749;
 $m-a-c-2 : #8e3c4a;
-$main-color-alpha : #df4c651d;
+$main-color-alpha : rgba(223, 76, 101, 0.114);
 $main-color-alpha-page : #f26d8315;
 $seconde-color : royalblue;
 $height-carousel : 400px;
 $shadow-nav : 0 3px 5px rgba(185, 185, 185, 0.159);
 // end variables
+@for $i from 0 through 20 {
+    .mt-#{$i} {
+        margin-top: #{$i}px;
+    }
+}

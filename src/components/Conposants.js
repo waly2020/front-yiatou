@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-// import { Slide } from 'react-slideshow-image';
-// let linkImg = "http://localhost:3000/";
-let linkImg = "https://preeminent-pastelito-85d92a.netlify.app/";
+import { useRef, useState } from 'react';
+import jwtDecode from 'jwt-decode';
+import Cookie from 'js-cookie';
+import {Splide,SplideSlide} from '@splidejs/react-splide';
+
+let linkImg = "http://localhost:3000/";
+// let linkImg = "https://yiatouweb.netlify.app/";
 
 const ContentHeaderNotif = ({ texte, notif = false, back = false, color = "main", backPage = "/" }) => {
     return (
@@ -23,6 +26,28 @@ const ContentHeaderNotif = ({ texte, notif = false, back = false, color = "main"
         </>
     );
 };
+const ContentHeaderCompte = ({texte = "Mon compte",color = "#444",linkImgUser,linkData = "#", userConnected = false}) =>{
+    const [display,setDisplay] = useState(false);
+    const logOut = () =>{
+        // yiatou-token-user yiatou-token-access
+        Cookie.remove("yiatou-token-user");
+        Cookie.remove("yiatou-token-access");
+        window.location.href = "/";
+    }
+    return (
+        <>
+        <h1 className='titre' style={{color : color}}>{texte}</h1>
+        {userConnected ? <div className='option-user'>
+            <img src={linkImgUser} onClick={() => {setDisplay(!display)}} alt='utilisateur non connecter'/>
+
+            <ul className={`link-option-user ${display ? "active" : ""}`}>
+              <li><Link to={linkData}><i className="bi bi-person-bounding-box"></i> Mes cordonnees</Link></li>
+              <li onClick={logOut}><i className="bi bi-box-arrow-in-left"></i> Deconeexion</li>
+            </ul>
+        </div> : null}
+        </>
+    )
+}
 const ContentHeaderAddDemande = ({ color = "main" }) => {
     return (
         <>
@@ -59,53 +84,123 @@ donnee acepter pour le carrousel.
     prix : 70000
 }]
  */
-const Carousel = ({ slides = [] }) => {
 
-    let [currentSlide, setCurrentSlide] = useState(0);
+const Carousel = () => {
 
     return (
         <>
-            <div className='content-slider'>
-                <div className="btns-slide">
-                    <button className="left btn" onClick={() => { setCurrentSlide(currentSlide > 0 ? currentSlide -= 1 : currentSlide = 0) }}>{"<"}</button>
-                    <button className="right btn" onClick={() => { setCurrentSlide(currentSlide < slides.length - 1 ? currentSlide += 1 : currentSlide = slides.length - 1) }}>{">"}</button>
-                </div>
-                <div className="contener-images" style={{ transform: `translateX(-${(80) * currentSlide}%)` }}>
-                    <div className="fragment f1">
-                        <div className="frag-item"></div>
+        <div className='cont-titre-test'>
+
+        
+        <h2 className='titre-test'>
+           <span className='quote-titre c1'>
+               <i className="bi bi-quote"></i>
+           </span>
+            Temoignages
+            <span className='quote-titre c2'>
+               <i className="bi bi-quote"></i>
+           </span>
+        </h2>
+        </div>
+           <Splide tag='div' aria-label='testimonial' options={{
+        type : "loop",
+        arrows : false,
+        // width : "50%"
+        fixedWidth : "90%",
+        // gap : 5,
+        classes : "carousel-main",
+        // clones : 4
+        // perPage : 2
+      } }>
+            <SplideSlide>
+                <div className='item-carousel'>
+                   <div className='testiMonial'>
+                   <div className='design'></div>
+                    <div className='quote'>
+                    <i className="bi bi-quote"></i>
                     </div>
-                    {slides.map((img, i, array) => {
-                        return (
-                            <div key={i} className="img-slide">
-                                <div className="content-items-slide">
-                                    <div className="content">
-
-                                        <div className="image">
-                                            <img src={`${linkImg}assets/image/${img.image}`} alt="paire de chessure" />
-                                        </div>
-
-                                        <div className="btns-items">
-                                            <div className="text-items">
-                                                <p className="titre-item">{img.titre}</p>
-                                                <p className="prix-item">{img.prix.toLocaleString()} F</p>
-                                            </div>
-                                            <div className="btn-cta">
-                                                <button>Accepter</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>)
-                    })}
-                    <div className="fragment f2">
-                        <div></div>
+                    <div className='texte-test'>
+                       <p>
+                         This article discussed 7 VS Code extensions you can use to develop React apps more quickly and effectively.
+                       </p>
                     </div>
+                    <div className='user-test'>
+                        <div className='user-image'>
+                            <img src={`${linkImg}assets/image/icones/men-user.png`} alt='utilisateur'/>
+                        </div>
+                        <p className='user-test-name'>WALY LE DEV</p>
+                        <p className='user-test-post'>Developpeur web full-stack</p>
+                    </div>
+                   </div>
                 </div>
-                <div className="dots">
-                    {slides.map((item, i, array) => (<div key={i} className={currentSlide === i ? "active" : "not-active"}></div>))}
+            </SplideSlide>
+            <SplideSlide>
+            <div className='item-carousel'>
+                <div className='testiMonial'>
+                <div className='design'></div>
+                    <div className='quote'>
+                    <i className="bi bi-quote"></i>
+                    </div>
+                    <div className='texte-test'>
+                       <p>
+                         This article discussed 7 VS Code extensions you can use to develop React apps more quickly and effectively.
+                       </p>
+                    </div>
+                    <div className='user-test'>
+                        <div className='user-image'>
+                            <img src={`${linkImg}assets/image/icones/men-user.png`} alt='utilisateur'/>
+                        </div>
+                        <p className='user-test-name'>WALY LE DEV</p>
+                        <p className='user-test-post'>Developpeur web full-stack</p>
+                    </div>
                 </div>
             </div>
+            </SplideSlide>
+            <SplideSlide>
+            <div className='item-carousel'>
+                <div className='testiMonial'>
+                <div className='design'></div>
+                    <div className='quote'>
+                    <i className="bi bi-quote"></i>
+                    </div>
+                    <div className='texte-test'>
+                       <p>
+                         This article discussed 7 VS Code extensions you can use to develop React apps more quickly and effectively.
+                       </p>
+                    </div>
+                    <div className='user-test'>
+                        <div className='user-image'>
+                            <img src={`${linkImg}assets/image/icones/men-user.png`} alt='utilisateur'/>
+                        </div>
+                        <p className='user-test-name'>WALY LE DEV</p>
+                        <p className='user-test-post'>Developpeur web full-stack</p>
+                    </div>
+                </div>
+            </div>
+            </SplideSlide>
+            <SplideSlide>
+            <div className='item-carousel'>
+                <div className='testiMonial'>
+                <div className='design'></div>
+                    <div className='quote'>
+                    <i className="bi bi-quote"></i>
+                    </div>
+                    <div className='texte-test'>
+                       <p>
+                         This article discussed 7 VS Code extensions you can use to develop React apps more quickly and effectively.
+                       </p>
+                    </div>
+                    <div className='user-test'>
+                        <div className='user-image'>
+                            <img src={`${linkImg}assets/image/icones/men-user.png`} alt='utilisateur'/>
+                        </div>
+                        <p className='user-test-name'>WALY LE DEV</p>
+                        <p className='user-test-post'>Developpeur web full-stack</p>
+                    </div>
+                </div>
+            </div>
+            </SplideSlide>
+           </Splide>
         </>
     )
 }
@@ -430,21 +525,77 @@ const ConfirmeArticle = ({ actuelleArticle = [] }) => {
 // Login
 
 const Login = () => {
+    const numero = useRef("");
+    const password = useRef("");
+    const [erreur, SetErreur] = useState(false);
+    const [top, SetTop] = useState(false);
+
+    // Fonction pour gérer la soumission du formulaire de connexion
+    const handleForm = async (e) => {
+        e.preventDefault(); // Empêche le comportement par défaut de l'événement de soumission
+
+        // Création d'un objet FormData pour stocker les données du formulaire
+        const data = {
+            username : numero.current.value,
+            password : password.current.value
+        }
+        console.log(data);
+        SetTop(!top); // Affichage du spinner de chargement
+
+        // Envoi de la requête de connexion au serveur avec les données du formulaire
+        fetch("https://yiatoutest.pythonanywhere.com/api/token", {
+        method: "POST",
+        body: data,
+        headers : {'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+            },
+        }).then(response =>{
+             // Récupération des données de réponse du serveur
+        let dataUser = response.json();
+        console.log(dataUser);
+        if (response.ok) { // Si la réponse est valide (status 2xx)
+        // Enregistrement du token d'authentification dans un cookie
+        Cookie.set(
+            "yiatou-token-access",
+            JSON.stringify(dataUser),
+            { expires: 7, path: "/" }
+        );
+
+        // Cookie.set( // stocke le nom d'utilisateur dans un cookie nommé "2f416677-858f-796a-a221-690e5e4ae75a-Cooktoken"
+        //     "yiatou-token-user",
+        //     JSON.stringify({ nom: username.current.value }),
+        //     { expires: 7, path: "/" }
+        // );
+        
+        // Rechargement de la page
+        // window.location.reload();
+        // } else { // Si la réponse est invalide (status 404 ou 500)
+        // SetErreur(true); // Affichage de l'erreur
+        // SetTop(false); // Masquage du spinner de chargement
+        }
+        }).catch(err =>{
+            console.log(err);
+            SetErreur(!erreur); // Affichage de l'erreur
+            SetTop(false); // Masquage du spinner de chargement
+        })
+
+       
+    };
     return (
         <div>
-            <form action="#" method="post" className='form login'>
+            <form className='form login'>
                 <div className="inputs">
                     <div className="input">
                         <p className="input-desc">Numero de telephone</p>
-                        <input type="tel" name="numero" id="numero" placeholder='074000000' required={true} />
+                        <input ref={numero} type="text" name="numero" id="numero" placeholder='074000000' required={true} />
                     </div>
                     <div className="input">
                         <p className="input-desc">Mot de passe</p>
-                        <input type="password" name="password" id="password" required={true} />
+                        <input ref={password} type="password" name="password" id="password" required={true} />
                     </div>
                 </div>
                 <div className="button-submit">
-                    <button type="submit" className='checked'>Je me connecte</button>
+                    <button onClick={handleForm} type="submit" className='checked'>Je me connecte</button>
                 </div>
             </form>
 
@@ -453,28 +604,120 @@ const Login = () => {
     );
 };
 const Create = () => {
+    // Initialisation des états d'erreur et de chargement de la page
+    const [erreur, SetErreur] = useState(false);
+    const [top, SetTop] = useState(false);
+
     const [check, setCheck] = useState(false);
+    const userName = useRef("");
+    const lastName = useRef("");
+    // const email = useRef("");
+    console.log(lastName.current.value);
+    const password = useRef("");
+    const genre = useRef("");
+    const numero = useRef("");
+    /**
+     * 
+     * {
+    "last_name": null,
+    "first_name": null,
+    "email": "jb@gmail.com",
+    "username": "jb",
+    "password" : "qbc12345",
+    "password2" : "qbc12345"
+}
+     */
+    const handleForm = async (e) => { // déclare une fonction asynchrone qui sera exécutée lors de la soumission du formulaire
+
+        e.preventDefault(); // empêche la soumission du formulaire de se produire par défaut
+        // console.log("form");
+        const data = {
+            last_name: "Mintsa",
+            first_name: "Jean-bosco",
+            email: "mintsa@gmail.com",
+            username: "Le dev",
+            password : "qbc12345",
+            
+            password2 : "qbc12345"
+        }
+        SetTop(true); // met à jour l'état de la variable "Top" à true
+
+        fetch( // envoie une requête POST à l'endpoint de création de compte utilisateur de l'API
+        "https://yiatoubackend2.pythonanywhere.com/v1/users/auth/register/",
+        {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers : {'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+            },
+        }
+        ).then(response => {
+            console.log(response);
+            if (response.ok) { // si la réponse est valide (statut 200-299)
+                console.log('data :\n',data);
+                console.log("utilisateur cree");
+
+                // response.json().then(dataUser => {
+                //     console.log(dataUser);
+                //     console.log('access \n',dataUser.access);
+
+                //     const {access} = dataUser;
+
+                //     const decode = jwtDecode(access);
+
+                //     Cookie.set( // stocke le jeton d'accès dans un cookie nommé "2f416677-858f-796a-a221-690e5e4ae75a-token"
+                //     "yiatou-token-access",
+                //     dataUser.access,
+                //     { expires: 7, path: "/" }
+                //     );
+                    
+
+                //     Cookie.set( // stocke le nom d'utilisateur dans un cookie nommé "2f416677-858f-796a-a221-690e5e4ae75a-Cooktoken"
+                //     "yiatou-token-user",
+                //     JSON.stringify({id : decode.user_id, username : data.username,email : data.email,genre : genre.current.value}),
+                //     { expires: 7, path: "/" }
+                //     );
+                //     window.location.href = "/";
+                // }) 
+                // récupère les données de réponse sous forme d'objet JSON
+       
+        console.log(response);
+        // window.location.reload(); // recharge la page après avoir stocké les cookies
+        }
+        }).catch(err =>{
+          
+            // SetErreur(dataUser); // met à jour l'état de la variable "Erreur" avec les données de réponse de l'API
+            SetTop(false); // met à jour l'état de la variable "Top" à false
+            SetErreur(err);
+            console.log("erreur");
+            console.log(err);
+        })
+
+        
+    };
+    
+
     return (
-        <form action="#" method="post" className='form create'>
+        <form onSubmit={handleForm} className='form create'>
             <div className="inputs">
-                <div className="input">
-                    <p className="input-desc">Prenom</p>
-                    <input type="text" name="prenom" id='prenom' placeholder='Doe' required={true} />
+            <div className="input">
+                    <p className="input-desc">Nom</p>
+                    <input ref={userName} onChange={txt => {console.log(userName.current.value);}} type="text" name="prenom" id='prenom' placeholder='Doe' required={true} />
                 </div>
                 <div className="input">
                     <p className="input-desc">Civilité</p>
-                    <select name="civiliter" id="civiliter" required={true}>
-                        <option value="homme">Monsieur</option>
-                        <option value="femme">Madame</option>
+                    <select ref={genre} name="civiliter" id="civiliter" required={true}>
+                        <option value="M">Monsieur</option>
+                        <option value="F">Madame</option>
                     </select>
                 </div>
                 <div className="input">
                     <p className="input-desc">Numero de telephone</p>
-                    <input type="tel" name="numero" id="numero" placeholder='074000000' required={true} />
+                    <input ref={numero} type="tel" name="numero" id="numero" placeholder='074000000' required={true} />
                 </div>
                 <div className="input">
                     <p className="input-desc">Mot de passe</p>
-                    <input type="password" name="password" id="password" required={true} />
+                    <input ref={password} type="password" name="password" id="password" required={true} />
                 </div>
                 <p className='link-conditions'>
                     <Link to="/condition-utilisation/log/create">Lire les conditions d'utilisations</Link>
@@ -627,4 +870,5 @@ export {
     Galerie,
     linkImg,
     newGalerie,
+    ContentHeaderCompte
 } 

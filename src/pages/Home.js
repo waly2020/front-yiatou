@@ -16,19 +16,19 @@ donnee acepter pour le carrousel.
 // const users = {
 //     sexe: "m",
 // }
-const slides = [{
-    image: "nike.jpg",
-    titre: "Nike",
-    prix: 70000
-}, {
-    image: "nike.jpg",
-    titre: "Basket",
-    prix: 780000
-}, {
-    image: "nike.jpg",
-    titre: "Chessure",
-    prix: 50000
-}];
+// const slides = [{
+//     image: "nike.jpg",
+//     titre: "Nike",
+//     prix: 70000
+// }, {
+//     image: "nike.jpg",
+//     titre: "Basket",
+//     prix: 780000
+// }, {
+//     image: "nike.jpg",
+//     titre: "Chessure",
+//     prix: 50000
+// }];
 
 const Home = () => {
     return (
@@ -52,7 +52,7 @@ const Home = () => {
                         <img src="./assets/image/gif.gif" alt="publicite" />
                     </div>
 
-                    <Carousel slides={slides} />
+                    <Carousel />
 
                     <div className="imgs">
                         <div>

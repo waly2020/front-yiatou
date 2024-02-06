@@ -1,16 +1,19 @@
-import React from 'react';
-import { ContentHeaderNotif, linkImg, NavigationDemandeur } from '../components/Conposants';
+import React, { useContext } from 'react';
+import { ContentHeaderCompte, ContentHeaderNotif, linkImg, NavigationDemandeur } from '../components/Conposants';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../context/context';
 
 const Compte = () => {
     // const { compte } = useParams();
-    let haveCount = true;
+    const {user} = useContext(AppContext);
+    // console.log(user);
+    let haveCount = user ? true : false;
     return (
         <div className='page page-compte'>
-            <Header classPage="notif">
-                <ContentHeaderNotif texte="Mon compte" link="#" color='black' />
+            <Header classPage="cont-compte">
+                <ContentHeaderCompte userConnected={haveCount} linkData='/user/demandeur' linkImgUser={`${linkImg}assets/image/icones/${user?.genre === "M" ? "men-user" : "wom-user"}.png`}/>
             </Header>
             <main className="body">
                 <div className="user-contente">
@@ -18,13 +21,12 @@ const Compte = () => {
                         {haveCount ? <><div className="user">
                             <img src={linkImg + "assets/image/icones/formes.jpg"} alt="fond compte" />
                             <div className="form-user">
-                                <img src={linkImg + "assets/image/icones/men-user.png"} alt="user" />
+                                <img src={`${linkImg}assets/image/icones/${user?.genre === "M" ? "men-user" : "wom-user"}.png`} alt="user" />
                             </div>
                         </div>
                             <div className="data-user">
-                                <p className="nom">Dave Anguilet Walker</p>
-                                <p className="mail">dave@gmail.com</p>
-                                <Link to="/user/demandeur">Mes cordonnees</Link>
+                                <p className="nom">{user?.username ?? null}</p>
+                                <p className="mail">{user?.email ?? null}</p>
                             </div></> : <>
                             <div className="cont-btn-compte">
                                 <Link to="/log/create"><button>Cree un compte</button></Link>

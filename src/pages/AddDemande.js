@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ContentHeaderAddDemande, newGalerie } from '../components/Conposants';
+import { ContentHeaderAddDemande, Descriptions, newGalerie } from '../components/Conposants';
 import Header from '../components/Header';
 
 const AddDemande = () => {
     let imgs = ['ar2.jpeg'];
+    const [modale,setModale] = useState(false);
     let [cpt, setCpt] = useState(1);
     const [desc,setDesc] = useState("");
     const [prix,setPrix] = useState();
@@ -35,6 +36,22 @@ const AddDemande = () => {
                 <ContentHeaderAddDemande color='black' />
             </Header>
             <main className="body">
+                <div className={`modale ${modale ? `active` : ``}`}>
+                    <div className="closeModal" onClick={() =>{setModale(false)}}>
+                    <i class="bi bi-x"></i>
+                    </div>
+                    <div className='contentModale'>
+                        <h2>Resumer</h2>
+                        <p className="para-list"><span className='titre-list'>Nom de l'article : </span> <span>Chessure de sport blanche</span></p>
+                        <p className="para-list"><span className='titre-list'>Catégorie </span> <span>Chaussures</span></p>
+                        <p className="para-list"><span className='titre-list'>Prix de l'article : </span> <span>{prix} FCFA</span></p>
+                        <Descriptions description={desc}/>
+                        <p className="para-list"><span className='titre-list mt-20'>Images : </span></p>
+                        <div className="content-img-resume">
+                        {newGalerie(imgs, "image")}</div>
+                        <button className='send' type='button'>Demander</button>
+                    </div>
+                </div>
                 <form action="#" className='formulaire' encType='multipart/from-data'>
                     <div className="contener-addImage">
 
@@ -89,7 +106,7 @@ const AddDemande = () => {
                             <input type="text" name="quantiter" id="quantiter" value={cpt} />
                             <button className='set' type='button' onClick={incremente}>+</button>
                         </div>
-                        <button className='send' type='sumbmit'>Demander</button>
+                        <button className='send' type='button' onClick={() =>{setModale(true)}}>Demander</button>
                     </div>
                 </form>
             </main>
