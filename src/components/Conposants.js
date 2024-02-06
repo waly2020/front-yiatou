@@ -745,7 +745,7 @@ const ArticleReaction = ({ nom = "Nike tendance 2021", img = "nike.jpg", prix = 
             <div className='article-rection'>
                 <div className="img">
                     
-                        <img src={linkImg + "assets/image/" + img} alt='img' className="img-img" />
+                        <img src={"/assets/image/" + img} alt='img' className="img-img" />
                     
                 </div>
                 <div className="texte-reaction">
@@ -775,7 +775,7 @@ const ItemPrposition = ({ nom = "About", prix = 550000, temp = 79, img = "store-
         <div className='proposition'>
             {propose ? <PopPropose active={active} toggle={toggle} prix={prix} /> : ""}
             <div className="img">
-                <img src={linkImg + "assets/image/" + img} alt="images" />
+                <img src={"/assets/image/" + img} alt="images" />
             </div>
             <div className="textes">
                 <p className="nom">{nom}</p>

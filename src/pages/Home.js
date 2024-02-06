@@ -2,33 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 import { Carousel, ContentHeaderHome, NavigationDemandeur } from '../components/Conposants';
-import { Link } from 'react-router-dom';
-/*
-donnee acepter pour le carrousel.
- * Tableau d'objets
-[{
-    image : "nike.jpg",
-    titre : "Nike",
-    prix : 70000
-}]
- */
-// exemple
-// const users = {
-//     sexe: "m",
-// }
-// const slides = [{
-//     image: "nike.jpg",
-//     titre: "Nike",
-//     prix: 70000
-// }, {
-//     image: "nike.jpg",
-//     titre: "Basket",
-//     prix: 780000
-// }, {
-//     image: "nike.jpg",
-//     titre: "Chessure",
-//     prix: 50000
-// }];
+import { Link } from 'react-router-dom'; 
 
 const Home = () => {
     return (

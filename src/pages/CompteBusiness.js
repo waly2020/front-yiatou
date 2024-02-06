@@ -15,9 +15,9 @@ const CompteBusiness = () => {
                 <div className="user-contente">
                     <div className="fond-compte-user">
                         {haveCount ? <><div className="user">
-                        <img src={linkImg + "assets/image/icones/formes.jpg"} alt="fond compte" />
+                        <img src={"/assets/image/icones/formes.jpg"} alt="fond compte" />
                             <div className="form-user">
-                            <img src={linkImg + "assets/image/icones/men-user.png"} alt="user" />
+                            <img src={"/assets/image/dave.jpg"} alt="user" />
                             </div>
                         </div>
                             <div className="data-user">

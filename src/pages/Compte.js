@@ -18,8 +18,8 @@ const Compte = () => {
             <main className="body">
                 <div className="user-contente">
                     <div className="fond-compte-user">
-                        {haveCount ? <><div className="user">
-                            <img src={linkImg + "assets/image/icones/formes.jpg"} alt="fond compte" />
+                        {/* {haveCount ? <><div className="user">
+                            <img src={"/assets/image/icones/formes.jpg"} alt="fond compte" />
                             <div className="form-user">
                                 <img src={`${linkImg}assets/image/icones/${user?.genre === "M" ? "men-user" : "wom-user"}.png`} alt="user" />
                             </div>
@@ -32,18 +32,18 @@ const Compte = () => {
                                 <Link to="/log/create"><button>Cree un compte</button></Link>
                                 <Link to="/log/login" className='link-cnt'>Se connecter</Link>
                             </div>
-                        </>}
-                        {/* <div className="user">
-                            <img src={linkImg + "assets/image/f-compte.jpg"} alt="fond compte" />
+                        </>} */}
+                        <div className="user">
+                            <img src={"/assets/image/icones/formes.jpg"} alt="fond compte" />
                             <div className="form-user">
-                                <img src={linkImg + "assets/image/dave.jpg"} alt="user" />
+                                <img src={"/assets/image/dave.jpg"} alt="user" />
                             </div>
                         </div>
                         <div className="data-user">
                             <p className="nom">Dave Anguilet Walker</p>
                             <p className="mail">dave@gmail.com</p>
                             <Link to="/user/demandeur">Mes cordonnees</Link>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
                 <div className="links">
