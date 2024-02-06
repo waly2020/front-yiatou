@@ -12,7 +12,7 @@ const About = () => {
             </Header>
             <main className="body">
                 {/* <div className="cont-img-txt-page">
-                    <img src={`${linkImg}assets/image/nike.jpg`} alt="ma representation" />
+                    <img src={`/assets/image/nike.jpg`} alt="ma representation" />
                 </div> */}
                 <p className="txt-page-txt-page">
                     A l'heure où vous êtes en train de lire ces lignes, des milliers de personnes sont en train de rechercher où ils peuvent acheter X ou Y produit et en fonction de leur budget. Certains trouveront sans effort, d’autres au bout d’un long moment et d'autres quasiment pas, car il est impossible de parcourir toutes les boutiques du marché.
@@ -21,13 +21,13 @@ const About = () => {
                     Avec Yiatou nous nous sommes donné pour mission d’aider les acheteurs à trouver les vendeurs qui vendent ce qu’ils veulent acheter et qui correspondent à leur budget en quelques minutes en envoyant une simple photo.
                 </p>
                 {/* <div className="cont-img-txt-page">
-                    <img src={`${linkImg}assets/image/nike.jpg`} alt="ma representation" />
+                    <img src={`/assets/image/nike.jpg`} alt="ma representation" />
                 </div> */}
                 <p className="txt-page-txt-page">
                     Il y a 4 ans je devais acheter une chaussure de marque Wallabys et j’avais un budget de 20.000 FCFA. J’avais cette chaussure un peu plus jeune et le budget que j’avais était bon pour l’acheter. Une fois au marché, j’ai cherché dans tout le marché un vendeur qui avait la chaussure que je voulais et qui allait accepter le prix que j’étais prêt à payer.
                 </p>
                 {/* <div className="cont-img-txt-page">
-                    <img src={`${linkImg}assets/image/nike.jpg`} alt="ma representation" />
+                    <img src={`/assets/image/nike.jpg`} alt="ma representation" />
                 </div> */}
                 <p className="txt-page-txt-page">
                     J’ai parcouru plus d’une vingtaine de boutiques de vente de chaussures pendant près de 45 minutes et sans succès. La chaussure était difficile à trouver et quand un vendeur l’avait, le  prix proposé ne cadrait pas avec mon budget de 20.000 FCFA. Les prix que les vendeurs me proposaient allaient de 24.000 FCFA à 29.000 FCFA, ce qui était loin de mon budget.

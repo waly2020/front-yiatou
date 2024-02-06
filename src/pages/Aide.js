@@ -19,7 +19,7 @@ const Aide = () => {
                 <h3 className='question' id='question1'>Question 1</h3>
 
                 <div className="cont-img-txt-page">
-                    <img src={`${linkImg}assets/image/nike.jpg`} alt="ma representation" />
+                    <img src={`/assets/image/nike.jpg`} alt="ma representation" />
                 </div>
                 <p className="txt-page-txt-page">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quia harum quasi sequi fugiat eveniet quas nobis doloremque voluptas! Sequi aliquid laudantium sit quia laborum voluptatum quis, eaque temporibus, maxime sed alias quos neque veritatis est deleniti reprehenderit placeat cupiditate repellendus saepe et reiciendis illo numquam! Alias dignissimos id voluptatum veniam corrupti recusandae odio accusantium distinctio natus laudantium, nulla aut porro fugiat nemo esse, reprehenderit suscipit voluptas quae non eligendi ab, neque consequatur! Architecto debitis provident officia. Dolor, asperiores beatae itaque cumque fuga officiis deserunt in. Quo distinctio obcaecati voluptate eum sit exercitationem quia soluta qui iure, perferendis velit voluptatem?
@@ -31,7 +31,7 @@ const Aide = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quia harum quasi sequi fugiat eveniet quas nobis doloremque voluptas! Sequi aliquid laudantium sit quia laborum voluptatum quis, eaque temporibus, maxime sed alias quos neque veritatis est deleniti reprehenderit placeat cupiditate repellendus saepe et reiciendis illo numquam! Alias dignissimos id voluptatum veniam corrupti recusandae odio accusantium distinctio natus laudantium, nulla aut porro fugiat nemo esse, reprehenderit suscipit voluptas quae non eligendi ab, neque consequatur! Architecto debitis provident officia. Dolor, asperiores beatae itaque cumque fuga officiis deserunt in. Quo distinctio obcaecati voluptate eum sit exercitationem quia soluta qui iure, perferendis velit voluptatem?
                 </p>
                 <div className="cont-img-txt-page">
-                    <img src={`${linkImg}assets/image/nike.jpg`} alt="ma representation" />
+                    <img src={`/assets/image/nike.jpg`} alt="ma representation" />
                 </div>
                 <p className="txt-page-txt-page">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quia harum quasi sequi fugiat eveniet quas nobis doloremque voluptas! Sequi aliquid laudantium sit quia laborum voluptatum quis, eaque temporibus, maxime sed alias quos neque veritatis est deleniti reprehenderit placeat cupiditate repellendus saepe et reiciendis illo numquam! Alias dignissimos id voluptatum veniam corrupti recusandae odio accusantium distinctio natus laudantium, nulla aut porro fugiat nemo esse, reprehenderit suscipit voluptas quae non eligendi ab, neque consequatur! Architecto debitis provident officia. Dolor, asperiores beatae itaque cumque fuga officiis deserunt in. Quo distinctio obcaecati voluptate eum sit exercitationem quia soluta qui iure, perferendis velit voluptatem?
@@ -40,7 +40,7 @@ const Aide = () => {
                 <h3 className='question' id='question1'>Question 3</h3>
 
                 <div className="cont-img-txt-page">
-                    <img src={`${linkImg}assets/image/nike.jpg`} alt="ma representation" />
+                    <img src={`/assets/image/nike.jpg`} alt="ma representation" />
                 </div>
                 <p className="txt-page-txt-page">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quia harum quasi sequi fugiat eveniet quas nobis doloremque voluptas! Sequi aliquid laudantium sit quia laborum voluptatum quis, eaque temporibus, maxime sed alias quos neque veritatis est deleniti reprehenderit placeat cupiditate repellendus saepe et reiciendis illo numquam! Alias dignissimos id voluptatum veniam corrupti recusandae odio accusantium distinctio natus laudantium, nulla aut porro fugiat nemo esse, reprehenderit suscipit voluptas quae non eligendi ab, neque consequatur! Architecto debitis provident officia. Dolor, asperiores beatae itaque cumque fuga officiis deserunt in. Quo distinctio obcaecati voluptate eum sit exercitationem quia soluta qui iure, perferendis velit voluptatem?

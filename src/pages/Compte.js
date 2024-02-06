@@ -13,7 +13,7 @@ const Compte = () => {
     return (
         <div className='page page-compte'>
             <Header classPage="cont-compte">
-                <ContentHeaderCompte userConnected={haveCount} linkData='/user/demandeur' linkImgUser={`${linkImg}assets/image/icones/${user?.genre === "M" ? "men-user" : "wom-user"}.png`}/>
+                <ContentHeaderCompte userConnected={haveCount} linkData='/user/demandeur' linkImgUser={`/assets/image/icones/${user?.genre === "M" ? "men-user" : "wom-user"}.png`}/>
             </Header>
             <main className="body">
                 <div className="user-contente">
@@ -21,7 +21,7 @@ const Compte = () => {
                         {/* {haveCount ? <><div className="user">
                             <img src={"/assets/image/icones/formes.jpg"} alt="fond compte" />
                             <div className="form-user">
-                                <img src={`${linkImg}assets/image/icones/${user?.genre === "M" ? "men-user" : "wom-user"}.png`} alt="user" />
+                                <img src={`/assets/image/icones/${user?.genre === "M" ? "men-user" : "wom-user"}.png`} alt="user" />
                             </div>
                         </div>
                             <div className="data-user">
