@@ -616,22 +616,34 @@ const Create = () => {
     const password = useRef("");
     const genre = useRef("");
     const numero = useRef("");
-
+    /**
+     * 
+     * {
+    "last_name": null,
+    "first_name": null,
+    "email": "jb@gmail.com",
+    "username": "jb",
+    "password" : "qbc12345",
+    "password2" : "qbc12345"
+}
+     */
     const handleForm = async (e) => { // déclare une fonction asynchrone qui sera exécutée lors de la soumission du formulaire
 
         e.preventDefault(); // empêche la soumission du formulaire de se produire par défaut
-        console.log("form");
+        // console.log("form");
         const data = {
-            username : userName.current.value,
-            password : password.current.value,
-            condition : `${check}`,
-            email : `${userName.current.value}${Math.floor(Math.random() * 100)}@gmail.com`,
-            // genre : genre.current.value,
+            last_name: "Mintsa",
+            first_name: "Jean-bosco",
+            email: "mintsa@gmail.com",
+            username: "Le dev",
+            password : "qbc12345",
+            
+            password2 : "qbc12345"
         }
         SetTop(true); // met à jour l'état de la variable "Top" à true
 
         fetch( // envoie une requête POST à l'endpoint de création de compte utilisateur de l'API
-        "https://yatouback.pythonanywhere.com/creation-2f416677-858f-796a-a221-690e5e4ae75a2f416677-858f-796a-a221-690e5e4ae75a",
+        "https://yiatoubackend2.pythonanywhere.com/v1/users/auth/register/",
         {
             method: "POST",
             body: JSON.stringify(data),
@@ -640,33 +652,34 @@ const Create = () => {
             },
         }
         ).then(response => {
-            
+            console.log(response);
             if (response.ok) { // si la réponse est valide (statut 200-299)
                 console.log('data :\n',data);
                 console.log("utilisateur cree");
 
-                response.json().then(dataUser => {
-                    console.log(dataUser);
-                    console.log('access \n',dataUser.access);
+                // response.json().then(dataUser => {
+                //     console.log(dataUser);
+                //     console.log('access \n',dataUser.access);
 
-                    const {access} = dataUser;
+                //     const {access} = dataUser;
 
-                    const decode = jwtDecode(access);
+                //     const decode = jwtDecode(access);
 
-                    Cookie.set( // stocke le jeton d'accès dans un cookie nommé "2f416677-858f-796a-a221-690e5e4ae75a-token"
-                    "yiatou-token-access",
-                    dataUser.access,
-                    { expires: 7, path: "/" }
-                    );
+                //     Cookie.set( // stocke le jeton d'accès dans un cookie nommé "2f416677-858f-796a-a221-690e5e4ae75a-token"
+                //     "yiatou-token-access",
+                //     dataUser.access,
+                //     { expires: 7, path: "/" }
+                //     );
                     
 
-                    Cookie.set( // stocke le nom d'utilisateur dans un cookie nommé "2f416677-858f-796a-a221-690e5e4ae75a-Cooktoken"
-                    "yiatou-token-user",
-                    JSON.stringify({id : decode.user_id, username : data.username,email : data.email,genre : genre.current.value}),
-                    { expires: 7, path: "/" }
-                    );
-                    window.location.href = "/";
-                }) // récupère les données de réponse sous forme d'objet JSON
+                //     Cookie.set( // stocke le nom d'utilisateur dans un cookie nommé "2f416677-858f-796a-a221-690e5e4ae75a-Cooktoken"
+                //     "yiatou-token-user",
+                //     JSON.stringify({id : decode.user_id, username : data.username,email : data.email,genre : genre.current.value}),
+                //     { expires: 7, path: "/" }
+                //     );
+                //     window.location.href = "/";
+                // }) 
+                // récupère les données de réponse sous forme d'objet JSON
        
         console.log(response);
         // window.location.reload(); // recharge la page après avoir stocké les cookies

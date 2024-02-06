@@ -35,7 +35,7 @@ const Home = () => {
         <>
             <div className="page home-page">
                 <Header classPage="home">
-                    <ContentHeaderHome icnBoutique={false} icnNotif={false} icnCompte={true} />
+                    <ContentHeaderHome icnBoutique={true} icnNotif={true} icnCompte={false} />
                 </Header>
                 <main className="body">
                     <div className="add-image">
