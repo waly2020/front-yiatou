@@ -5,7 +5,7 @@ const Spashe = () => {
     return (
         <div className='page spashe'>
             <main className="body">
-                <img src={`${linkImg}assets/image/logotipo.png`} alt="logo yiatou" />
+                <img src={`/assets/image/logotipo.png`} alt="logo yiatou" />
             </main>
         </div>
     );

@@ -126,7 +126,7 @@ const Carousel = () => {
                     </div>
                     <div className='user-test'>
                         <div className='user-image'>
-                            <img src={`${linkImg}assets/image/icones/men-user.png`} alt='utilisateur'/>
+                            <img src={`/assets/image/icones/men-user.png`} alt='utilisateur'/>
                         </div>
                         <p className='user-test-name'>WALY LE DEV</p>
                         <p className='user-test-post'>Developpeur web full-stack</p>
@@ -148,7 +148,7 @@ const Carousel = () => {
                     </div>
                     <div className='user-test'>
                         <div className='user-image'>
-                            <img src={`${linkImg}assets/image/icones/men-user.png`} alt='utilisateur'/>
+                            <img src={`/assets/image/icones/men-user.png`} alt='utilisateur'/>
                         </div>
                         <p className='user-test-name'>WALY LE DEV</p>
                         <p className='user-test-post'>Developpeur web full-stack</p>
@@ -170,7 +170,7 @@ const Carousel = () => {
                     </div>
                     <div className='user-test'>
                         <div className='user-image'>
-                            <img src={`${linkImg}assets/image/icones/men-user.png`} alt='utilisateur'/>
+                            <img src={`/assets/image/icones/men-user.png`} alt='utilisateur'/>
                         </div>
                         <p className='user-test-name'>WALY LE DEV</p>
                         <p className='user-test-post'>Developpeur web full-stack</p>
@@ -192,7 +192,7 @@ const Carousel = () => {
                     </div>
                     <div className='user-test'>
                         <div className='user-image'>
-                            <img src={`${linkImg}assets/image/icones/men-user.png`} alt='utilisateur'/>
+                            <img src={`/assets/image/icones/men-user.png`} alt='utilisateur'/>
                         </div>
                         <p className='user-test-name'>WALY LE DEV</p>
                         <p className='user-test-post'>Developpeur web full-stack</p>
@@ -230,7 +230,7 @@ const ContentHeaderHome = ({ color = "main", icnNotif = false, icnBoutique = fal
                     <svg width="50" height="50" viewBox="0 0 16 16"><path stroke="none" fill='currentColor' d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8A2.37 2.37 0 0 1 8 7.083A2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0a.5.5 0 0 1 1 0a1.375 1.375 0 0 0 2.75 0a.5.5 0 0 1 1 0a1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0a.5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" /></svg>
                 </Link> : ""}
                 {icnCompte ? <Link to="/compte/demandeur"> <div className={`addCompte ${user ? "" : "user"}`}>
-                    {user ? user.sexe.toLowerCase() === "m" ? <img src={`${linkImg}assets/image/icones/men-user.png`} alt="Utilisateur Homme" /> : <img src={`${linkImg}assets/image/icones/wom-user.png`} alt="Utilisateur Femme" /> :
+                    {user ? user.sexe.toLowerCase() === "m" ? <img src={`/assets/image/icones/men-user.png`} alt="Utilisateur Homme" /> : <img src={`/assets/image/icones/wom-user.png`} alt="Utilisateur Femme" /> :
                         <svg xmlns="http://www.w3.org/2000/svg" width="34" height="42" fill="#000" className="bi bi-person text-dark" viewBox="0 0 16 16">
                             <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
                         </svg>
@@ -338,7 +338,7 @@ const Article = ({ actuelleArticle = [] }) => {
                 <div key={i} className="article-carte">
                     <div className="header-article">
                         <div className="img">
-                            <img src={`${linkImg}assets/image/${article.image}`} alt="nike" />
+                            <img src={`/assets/image/${article.image}`} alt="nike" />
                         </div>
                         <div className="texte">
                             <p className='prix'>{article.prix} FCFA</p>
@@ -390,7 +390,7 @@ const PopPropose = ({ toggle, active, prix = 10000, date = "12h45" }) => {
 function newGalerie(array, folder) {
     return array.map((image, i, a) => (
         <div className={`img-gl i${i + 1} img${(i + 1)}`} key={i}>
-            <img src={`${linkImg}assets/${folder}/${image}`} alt={image} />
+            <img src={`/assets/${folder}/${image}`} alt={image} />
         </div>
     ))
 }
@@ -434,7 +434,7 @@ const Carte = ({ imgs = ["nike.jpg", "nike.jpg", "nike.jpg", "nike.jpg"], prix =
                 <div className={`image-array max-img-${imgs.length}`} onClick={addGalerie}>
                     {imgs.map((image, i, array) => (
                         <div className={`img${i}`} key={i}>
-                            <img src={`${linkImg}assets/image/${image}`} alt="articles" />
+                            <img src={`/assets/image/${image}`} alt="articles" />
                         </div>
                     ))}
                 </div>
@@ -462,7 +462,7 @@ const Carte = ({ imgs = ["nike.jpg", "nike.jpg", "nike.jpg", "nike.jpg"], prix =
 };
 const ComponentVide = ({ nameImg, texte }) => {
     return (
-        <div className="vide"><img src={`${linkImg}assets/image/icones/${nameImg}`} alt="" />
+        <div className="vide"><img src={`/assets/image/icones/${nameImg}`} alt="" />
             <p className="titre-vide">Aucun element pour le moment</p>
         </div>
     )
@@ -482,7 +482,7 @@ const ActueleArticle = ({ actuelleArticle = [] }) => {
             {actuelleArticle.length === 0 ? <ComponentVide nameImg="demande-vide.png" texte="Aucune demande" /> : actuelleArticle.map((article, i, array) => (
                 <div key={i} className="content-actuelle">
                     <div className="img-actuelle">
-                        <img src={`${linkImg}assets/image/${article.image}`} alt={article.image} />
+                        <img src={`/assets/image/${article.image}`} alt={article.image} />
                     </div>
                     <div className="textes-actuelle">
                         <p className='nom'>{article.titre}</p>
@@ -505,7 +505,7 @@ const ConfirmeArticle = ({ actuelleArticle = [] }) => {
                 <div key={i} className="contener-confirmer">
                     <div className="img-confirmer c">
                         
-                            <img src={`${linkImg}assets/image/${article.img}`} alt="chessure" />
+                            <img src={`/assets/image/${article.img}`} alt="chessure" />
                     </div>
                     <div className="texte-confirmer c">
                         <p className="prix c">{article.prix.toLocaleString()} FCFA</p>
@@ -745,7 +745,7 @@ const ArticleReaction = ({ nom = "Nike tendance 2021", img = "nike.jpg", prix = 
             <div className='article-rection'>
                 <div className="img">
                     
-                        <img src={linkImg + "assets/image/" + img} alt='img' className="img-img" />
+                        <img src={"/assets/image/" + img} alt='img' className="img-img" />
                     
                 </div>
                 <div className="texte-reaction">
@@ -775,7 +775,7 @@ const ItemPrposition = ({ nom = "About", prix = 550000, temp = 79, img = "store-
         <div className='proposition'>
             {propose ? <PopPropose active={active} toggle={toggle} prix={prix} /> : ""}
             <div className="img">
-                <img src={linkImg + "assets/image/" + img} alt="images" />
+                <img src={"/assets/image/" + img} alt="images" />
             </div>
             <div className="textes">
                 <p className="nom">{nom}</p>
@@ -834,7 +834,7 @@ const ItemNotifications = ({ texets = "", image = "nike.jpg", heurs = "12:23", c
     return (
         <div className={checked ? 'notifications' : 'notifications no-check'}>
             <div className="img-notif">
-                <img src={`${linkImg}assets/image/${image}`} alt="no alt" />
+                <img src={`/assets/image/${image}`} alt="no alt" />
             </div>
             <div className="content-notif">
                 <p>{texets}</p>

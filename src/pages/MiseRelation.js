@@ -31,7 +31,7 @@ const MiseRelation = () => {
                 <div className={`image-array max-img-${imgs.length}`} onClick={addGalerie}>
                     {imgs.map((image, i, array) => (
                         <div className={`img${i}`} key={i}>
-                            <img src={`${linkImg}assets/image/${image}`} alt="articles" />
+                            <img src={`/assets/image/${image}`} alt="articles" />
                         </div>
                     ))}
                 </div>

@@ -15,12 +15,12 @@ const Log = () => {
                     <div className='icone-c'>
                         <Link to="#">
                             <div className="icone g">
-                                <img src={linkImg + '/assets/svg/gg.svg'} alt="svg google" />
+                                <img src={'/assets/svg/gg.svg'} alt="svg google" />
                             </div>
                         </Link>
                         <Link to="#">
                             <div className="icone f">
-                                <img src={linkImg + '/assets/svg/fbk.svg'} alt="svg facebook" />
+                                <img src={'/assets/svg/fbk.svg'} alt="svg facebook" />
                             </div>
                         </Link>
                     </div>
